@@ -4,82 +4,143 @@
     box-sizing: border-box;
 }
 
+body{
+    background: linear-gradient(#66B10B, #5b8517);
+}
+
+
 .game-board {
     width: 100%;
-    height:500px;
-    border-bottom: 15px solid green;
+    height: 500px;
+    border-bottom: 10px solid (#428B10);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#87CEEB,#E0F6FF);
+    background: linear-gradient(#87CEEB, #E0F6FF);
+    
 }
 
-.pipe{
+
+
+
+.night-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#000033, #000066); /* Fundo de noite */
+    opacity: 0; /* Começa como dia */
+    pointer-events: none; /* Não interfere na interação do jogo */
+    transition: opacity 0.5s ease; /* Transição suave */
+}
+
+
+#restart-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#restart-button:hover {
+    background-color: #45a049;
+}
+
+.score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    left: 0;
+    top: 0;
+    padding: 5px;
+    background-color: rgb(53, 52, 52);
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    border-radius: 0 0 10px 0;
+}
+
+.best-score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    right: 0;
+    top: 0;
+    padding: 5px;
+    background-color: rgb(53, 52, 52);
+    border-left: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    border-radius: 0 0 0 10px;
+}
+
+.pipe {
     position: absolute;
     bottom: 0;
     width: 80px;
     animation: pipe-animation 1.5s infinite linear;
 }
 
-.mario{
+.mario {
     position: absolute;
     width: 150px;
     bottom: 0;
 }
 
-.jump{
+.jump {
     animation: mario-jump 500ms ease-out;
 }
 
-.clouds{
+.clouds {
     position: absolute;
     width: 550px;
     animation: clouds-animation 20s infinite linear;
 }
 
- 
 @keyframes clouds-animation {
-    from{
+    from {
         right: -550px;
     }
-    to{
+    to {
         right: 100%;
     }
 }
 
-
-
 @keyframes mario-jump {
-    0%{
+    0% {
         bottom: 0;
     }
-
-    40%{
+    40% {
         bottom: 180px;
     }
-    50%{
+    50% {
         bottom: 180px;
-
-    }    
-    60%{
-        bottom: 180px;
-
     }
-    100%{
+    60% {
+        bottom: 180px;
+    }
+    100% {
         bottom: 0;
     }
-    
 }
-
 
 @keyframes pipe-animation {
     0% {
         right: -80px;
-
     }
-    
-    to{
+    to {
         right: 100%;
     }
-    
 }
