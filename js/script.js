@@ -28,12 +28,7 @@ const loop = setInterval(() => {
         pipe.style.left = `${pipePosition}px`;
         mario.style.animation = 'none';
         mario.style.bottom = `${marioPosition}px`;
-<<<<<<< HEAD
         mario.src = '../images/game-over.png';
-=======
-
-        mario.src = './images/game-over.png';
->>>>>>> 87abf5a271774673262186241d13b6fffd583c61
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
         clearInterval(loop);
@@ -74,4 +69,3 @@ document.addEventListener('keydown', () => {
 restartButton.addEventListener('click', () => {
     location.reload();
 });
-//teste
